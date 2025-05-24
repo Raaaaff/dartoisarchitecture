@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Page non trouvée - Erreur 404</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="/assets/404.css" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="content floating">
+      <div class="error-code glow">404</div>
+      <div class="error-title">Cette page n'existe pas</div>
+      <p class="error-message">
+        Désolé, la page que vous recherchez semble avoir été déplacée,
+        supprimée ou n'existe pas.
+      </p>
+    </div>
+
+    <div class="button-container">
+      <a href="/" class="btn btn-hover">
+        <i class="fas fa-home"></i> Retour à l'accueil
+      </a>
+    </div>
+
+    <footer class="footer">
+      <p>© 2025 dartoisarchitecture.fr - Tous droits réservés</p>
+    </footer>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const elements = document.querySelectorAll('.floating, .btn-hover');
+      elements.forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(20px)';
+      });
+
+      setTimeout(() => {
+        elements.forEach((el, index) => {
+          setTimeout(() => {
+            el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            el.style.opacity = '1';
+            el.style.transform = 'translateY(0)';
+          }, index * 100);
+        });
+      }, 100);
+    });
+  </script>
+</body>
+
+</html>

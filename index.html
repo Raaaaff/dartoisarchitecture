@@ -1,174 +1,535 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>DartoisArchitecture</title>
-    <meta name="description" content="Bienvenue chez DartoisArchitecture, votre partenaire pour des projets architecturaux uniques. Découvrez nos réalisations et contactez-nous pour transformer votre espace." />
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-    <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
-    <link rel="stylesheet" href="/assets/style.css" />
-
-    <!-- Polices personnalisées -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&display=swap"
-        rel="stylesheet">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Dartois Architecture · Architecte d'intérieur &amp; Décoratrice</title>
+  <meta name="description" content="Marine Dartois, architecte d'intérieur et décoratrice sur la Côte d'Azur. Aménagement, décoration, extérieurs et suivi de chantier pour particuliers et professionnels.">
+  <meta name="theme-color" content="#7A896C">
+  <meta property="og:title" content="Dartois Architecture · Architecte d'intérieur &amp; Décoratrice">
+  <meta property="og:description" content="Des intérieurs en matières nobles et savoir-faire français, pensés pour chaque personne qui y entre ou y vit.">
+  <meta property="og:image" content="images/marine-dartois-portrait.webp">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 50'%3E%3Cellipse cx='20' cy='25' rx='18' ry='23' fill='%23FCFAF6' stroke='%23B0623D' stroke-width='1.5'/%3E%3Ctext x='20' y='31' font-family='Georgia' font-size='15' fill='%23B0623D' text-anchor='middle'%3EMD%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&family=Pinyon+Script&display=swap">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
 </head>
+<body>
 
-<body class="body">
-    <div id="top"></div>
+<!-- Motif : branche botanique réutilisée partout -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="branch" viewBox="0 0 120 160">
+      <g fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round">
+        <path d="M60 155 C58 120 62 80 60 8"/>
+        <path d="M60 128 C48 122 36 112 30 98 C44 100 55 110 60 128Z"/>
+        <path d="M60 116 C72 110 84 100 90 86 C76 88 65 98 60 116Z"/>
+        <path d="M60 94 C50 88 40 78 36 64 C49 67 57 78 60 94Z"/>
+        <path d="M60 82 C70 76 80 66 84 52 C71 55 63 66 60 82Z"/>
+        <path d="M60 60 C52 54 45 45 43 33 C54 37 59 47 60 60Z"/>
+        <path d="M60 50 C68 44 75 35 77 23 C66 27 61 37 60 50Z"/>
+        <path d="M60 30 C56 24 54 17 55 9 C61 14 62 22 60 30Z"/>
+      </g>
+    </symbol>
+  </defs>
+</svg>
 
-    <!-- Header -->
 <header class="header">
-  <div class="container header-content">
-    <a href="#top" class="logo-link">
-      <img src="/images/logo.webp" alt="Logo DartoisArchitecture" class="logo" />
+  <div class="wrap">
+    <a class="logo" href="#accueil" aria-label="Dartois Architecture, accueil">
+      <span class="logo-mark">MD</span>
+      <span class="logo-text"><b>Dartois</b><span>Architecture &amp; décoration</span></span>
     </a>
-    <a href="#top" class="site-title-link">
-      <h1 class="site-title">DartoisArchitecture</h1>
-    </a>
-    <nav class="nav-links" aria-label="Navigation principale">
-      <a href="#experience" class="nav-link">Expériences</a>
-      <a href="#portfolio" class="nav-link">Portfolio</a>
-      <a href="#contact" class="nav-link">Contact</a>
+    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="nav">Menu</button>
+    <nav class="nav" id="nav" aria-label="Navigation principale">
+      <a href="#accueil">Accueil</a>
+      <a href="#apropos">À propos</a>
+      <a href="#expertises">Expertises</a>
+      <a href="#realisations">Projets</a>
+      <a class="btn btn--accent" href="#contact">Contact</a>
     </nav>
   </div>
 </header>
 
+<main>
+<!-- =================== PAGE ACCUEIL =================== -->
+<div data-page="accueil">
 
-    <!-- Hero Section -->
-    <section class="hero-section">
-        <div class="hero-slide active" style="background-image: url('/images/fond3.webp');"></div>
-        <div class="hero-slide" style="background-image: url('/images/fond2.webp');"></div>
-        <div class="hero-slide" style="background-image: url('/images/fond1.webp');"></div>
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <div class="hero-textbox">
-                <h2 class="hero-title">L'architecture en image</h2>
-                <p class="hero-description">
-                    Chez Dartois Architecture, nous créons des espaces singuliers pour particulier et professionnels.
-                    Nous aimons donner forme aux idées, dès les premières esquisses jusqu'aux rendus 3D, pour
-                    accompagner chaque projet dans sa meilleure expression. Entre écoute, savoir-faire et créativité,
-                    nous bâtissons avec vous des lieux qui racontent une histoire.
-                </p>
-            </div>
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-text">
+        <p class="eyebrow">Dartois Architecture · Marine Dartois</p>
+        <h1>Architecte d'intérieur <em>&amp; Décoratrice</em></h1>
+        <p class="tagline">Des lieux qui accueillent.<br>Des matières qui durent.</p>
+        <p class="lead">Pour les particuliers comme pour les professionnels, je conçois des intérieurs en matières nobles et savoir-faire français, pensés pour chaque personne qui y entre ou y vit. Dans le respect de votre budget.</p>
+        <div class="hero-cta">
+          <a class="btn btn--accent" href="#contact">Parler de mon projet <span class="arrow"></span></a>
+          <a class="btn" href="#realisations">Voir les projets</a>
         </div>
-        <div class="scroll-down">
-            <a href="#experience"><i class="fas fa-chevron-down" alt="Découvrir mes réalisations" title="Découvrir mes réalisations"></i></a>
+        <p class="sign">Marine Dartois</p>
+      </div>
+      <div class="hero-visual">
+        <div class="photo blob">
+          <img fetchpriority="high" class="portrait" src="images/marine-dartois-portrait.webp" alt="Portrait de Marine Dartois, architecte d'intérieur et décoratrice">
         </div>
-    </section>
-
-    <!-- Experience Section -->
-    <section id="experience" class="experience-section">
-        <div class="container">
-            <div class="section-header">
-                <h2>Expériences</h2>
-                <div class="section-divider"></div>
-            </div>
-
-            <div class="experience-content">
-                <div class="experience-item">
-                    <h3>Stage – Bocca Jardins</h3>
-                    <p>
-                        Entreprise paysagère (3 à 5 personnes) spécialisée dans la création et l’entretien de jardins,
-                        avec une expertise en jardins japonais. Durant ce stage, j’ai participé à l’entretien de bassins
-                        (avec ou sans poissons), au contrôle des systèmes de filtration et des fontaines, à l’arrosage,
-                        ainsi qu’à l’entretien de zones végétalisées. Cette expérience m’a apporté rigueur et sens du
-                        détail pour préserver l’équilibre des écosystèmes et l’esthétique des espaces.
-                    </p>
-                    <img src="/images/bocca_jardins.webp" alt="Illustration du stage chez Bocca Jardins" class="experience-image" />
-                    <a href="/files/Marine Dartois Portfolio 2025.pdf#page=28" target="_blank" class="portfolio-btn" alt="Voir l'article sur mon stage à Bocca Jardins" title="Voir l'article sur mon stage à Bocca Jardins">
-                        Voir mon article
-                    </a>
-                </div>
-
-                <div class="experience-item">
-                    <h3>Stage – Atrium Paysage</h3>
-                    <p>
-                        Sous la direction d’Emmanuel Ratto, Atrium Paysage couvre toutes les étapes d’un projet paysager,
-                        de l’étude à la réalisation, avec pépinière intégrée et bureau d’études. Mon stage a été centré sur
-                        la conception : élaboration de plans clients, sélections de végétaux, moodboards et planches
-                        végétales. J’ai également réalisé un dossier technique pour le restaurant Dior après analyse des
-                        plantations existantes, mobilisant une approche rigoureuse d’identification et d’entretien. Les
-                        visites de chantiers ont relié conception et terrain, renforçant l’adaptation aux contraintes et
-                        aux usages.
-                    </p>
-                    <img src="/images/atrium_paysage.webp" alt="Illustration du stage chez Atrium Paysage" class="experience-image" />
-                    <a href="/files/Marine Dartois Portfolio 2025.pdf#page=25" target="_blank" class="portfolio-btn" alt="Voir l'article sur mon stage à Atrium Paysage" title="Voir l'article sur mon stage à Atrium Paysage">
-                        Voir mon article
-                    </a>
-                </div>
-            </div>
+        <svg class="hero-line" viewBox="0 0 600 700" preserveAspectRatio="none" aria-hidden="true">
+          <path d="M10 640 C60 700 200 712 330 690 C470 668 560 600 588 470 C612 360 570 260 596 160 C612 95 560 30 470 6"/>
+        </svg>
+        <div class="hero-badge">
+          <svg aria-hidden="true"><use href="#branch"/></svg>
+          <b>Particuliers &amp; professionnels</b>
+          <span>Côte d'Azur et toute la France</span>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <!-- Portfolio Section -->
-    <section id="portfolio" class="portfolio-section">
-        <div class="container">
-            <div class="section-header">
-                <h2>Mes réalisations</h2>
-                <div class="section-divider"></div>
-            </div>
+  <section class="band intro">
+    <div class="wrap">
+      <div class="photo arch">
+        <img loading="lazy" decoding="async" class="portrait atelier-img" src="images/atelier-matiere.webp" alt="Mur enduit à la chaux baigné de lumière, ombres de feuillage et voile de lin">
+      </div>
+      <div class="intro-text">
+        <p class="eyebrow">L'atelier</p>
+        <h2>Un lieu bien pensé se ressent avant de se voir.</h2>
+        <p class="lead">Architecte d'intérieur et dessinatrice-projeteuse, je suis votre projet de l'esquisse jusqu'au chantier. Les plans sont précis, les maquettes BIM complètes, et les artisans choisis avec soin.</p>
+        <a class="btn btn--light" href="#apropos" style="justify-self:start">Me découvrir <span class="arrow"></span></a>
+      </div>
+      <ul class="pillars">
+        <li><span class="ico"><svg viewBox="0 0 24 24"><path d="M3 21h18M5 21V9l7-5 7 5v12M10 21v-6h4v6"/></svg></span><span>Particuliers &amp;<br>professionnels</span></li>
+        <li><span class="ico"><svg viewBox="0 0 24 24"><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9L12 3zM12 12l8-4.5M12 12v9M12 12L4 7.5"/></svg></span><span>BIM &amp;<br>dessin-projet</span></li>
+        <li><span class="ico"><svg viewBox="0 0 24 24"><path d="M4 20h16M7 20V8h10v12M7 8l2-4h6l2 4M10 12h4M10 15h4"/><path d="M18 20l2-9"/></svg></span><span>Suivi de chantier<br>de A à Z</span></li>
+      </ul>
+    </div>
+  </section>
 
-            <div class="portfolio-grid">
-                <div class="portfolio-container">
-                    <img src="/images/portfolio.webp" alt="Portfolio DartoisArchitecture" class="portfolio-image" />
-                </div>
-                <div class="portfolio-text">
-                    <h3>Vous souhaitez transformer votre espace ?</h3>
-                    <p>
-                        Que vous soyez en train de rénover, de construire un nouveau projet ou simplement à la recherche
-                        d'inspiration design, je suis là pour donner vie à votre vision.
-                    </p>
-                    <a href="/files/Marine Dartois Portfolio 2025.pdf" target="_blank" class="portfolio-btn" alt="Voir mon portfolio" title="Voir mon portfolio">
-                        Voir mon portfolio
-                    </a>
-                </div>
-            </div>
+  <section>
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Projets</p>
+          <h2>Quelques lieux transformés</h2>
         </div>
-    </section>
+        <a class="btn" href="#realisations">Tous les projets <span class="arrow"></span></a>
+      </div>
+      <div class="feat-grid">
+        <a class="feat feat--big" href="#realisations">
+          <div class="photo blob"><img loading="lazy" decoding="async" class="portrait roof-img" src="images/projet-rooftop-mer.webp" alt="Rooftop face à la mer avec table ovale et jardinières minérales"></div>
+          <div class="feat-cap"><h3>Rooftop face à la mer</h3><p>Extérieur · Aménagement</p></div>
+        </a>
+        <a class="feat" href="#realisations">
+          <div class="photo arch"><img loading="lazy" decoding="async" class="portrait terr-img" src="images/projet-terrasse-minerale.webp" alt="Terrasse avec grands pots clairs, palmiers et galets blancs"></div>
+          <div class="feat-cap"><h3>Terrasse minérale</h3><p>Extérieur · Végétalisation</p></div>
+        </a>
+        <a class="feat feat--more" href="#realisations">
+          <span class="feat-more-in">
+            <svg aria-hidden="true"><use href="#branch"/></svg>
+            <b>Voir tous<br>les projets</b>
+            <span class="arrow"></span>
+          </span>
+        </a>
+      </div>
+    </div>
+  </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact-section">
-        <div class="container">
-            <div class="section-header">
-                <h2>Contact</h2>
-                <div class="section-divider"></div>
-            </div>
-
-            <div class="contact-grid">
-                <div class="contact-card">
-                    <div class="contact-icon"><i class="fab fa-instagram" style="color: #E1306C;"></i></div>
-                    <h3>Instagram</h3>
-                    <a href="https://www.instagram.com/dartoisarchitecture" target="_blank">@dartoisarchitecture</a>
-                </div>
-
-                <div class="contact-card">
-                    <div class="contact-icon"><i class="fas fa-phone" style="color: #20885d;"></i></div>
-                    <h3>Téléphone</h3>
-                    <a href="tel:+33662522120">+33 6 62 52 21 20</a>
-                </div>
-
-                <div class="contact-card">
-                    <div class="contact-icon"><i class="fas fa-envelope" style="color: #404f81;"></i></div>
-                    <h3>Email</h3>
-                    <a href="mailto:marine.archiint@gmail.com">marine.archiint@gmail.com</a>
-                </div>
-            </div>
+  <section class="alt">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Mes engagements</p>
+          <h2>Des lieux pensés pour durer et pour tous</h2>
         </div>
-    </section>
+        <a class="btn" href="#apropos">En savoir plus <span class="arrow"></span></a>
+      </div>
+      <ul class="strip">
+        <li><span class="commit-ico"><svg viewBox="0 0 32 32"><path d="M6 27c5-1 8-5 9-11M15 16c1-6 6-10 12-11-1 7-6 11-12 11zM15 16c-4 0-8-3-9-8 5 0 8 3 9 8z"/></svg></span><b>Savoir-faire français</b></li>
+        <li><span class="commit-ico"><svg viewBox="0 0 32 32"><path d="M5 24l7-12 5 7 4-5 6 10z"/><circle cx="22" cy="9" r="2.5"/></svg></span><b>Matériaux bruts et nobles</b></li>
+        <li><span class="commit-ico"><svg viewBox="0 0 32 32"><circle cx="9" cy="7" r="2.3"/><path d="M9 10v8M9 13l-3 4M9 18l-2 8M9 18l2 8M12 13l2 13"/><path d="M18 14h8l-1 6h-6zM20 20l-1 4M24 20l1 4"/><circle cx="19" cy="26" r="1.4"/><circle cx="25" cy="26" r="1.4"/></svg></span><b>Accessibles à tous</b></li>
+        <li><span class="commit-ico"><svg viewBox="0 0 32 32"><circle cx="16" cy="16" r="11"/><path d="M5.5 13c4 1 6 4 5 8M17 5.5c-1 3 1 5 4 5s4 3 3 6M14 27c1-3 4-4 6-3"/></svg></span><b>Santé et planète</b></li>
+      </ul>
+    </div>
+  </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2025 DartoisArchitecture. Tous droits réservés.</p>
+  <section class="cta">
+    <div class="wrap">
+      <div class="cta-arch">
+        <p class="eyebrow">Votre projet</p>
+        <h2>Créons un lieu qui vous ressemble.</h2>
+        <a class="btn btn--light" href="#contact">Me contacter</a>
+      </div>
+      <ul class="cta-list">
+        <li><svg viewBox="0 0 24 24"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 006 6L16 13l5 2v4a2 2 0 01-2 2A16 16 0 013 5a2 2 0 012-2"/></svg><span>06 62 52 21 20</span></li>
+        <li><svg viewBox="0 0 24 24"><path d="M3 6h18v12H3zM3 6l9 7 9-7"/></svg><span>dartois.architecture@outlook.com</span></li>
+        <li><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".6"/></svg><span>@dartois.architecture</span></li>
+        <li><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.5-7-12a7 7 0 0114 0c0 5.5-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg><span>Basée à Cannes, missions dans toute la France</span></li>
+      </ul>
+    </div>
+  </section>
+</div>
+
+<!-- =================== PAGE À PROPOS =================== -->
+<div data-page="apropos" hidden>
+  <section class="page-hero">
+    <div class="wrap">
+      <p class="eyebrow">À propos</p>
+      <h1>Marine Dartois</h1>
+      <p class="lead">Architecte d'intérieur, décoratrice et dessinatrice-projeteuse.</p>
+    </div>
+  </section>
+  <section style="padding-top:0">
+    <div class="wrap about-grid">
+      <div class="photo oval">
+        <img loading="lazy" decoding="async" class="portrait" src="images/marine-dartois-portrait.webp" alt="Portrait de Marine Dartois">
+      </div>
+      <div class="about-text">
+        <h2>Créer des lieux où l'on se sent bien, et où l'on revient.</h2>
+        <p>J'ai fondé Dartois Architecture pour accompagner les particuliers comme les professionnels dans l'aménagement et la décoration de leurs lieux. Une pièce, un appartement, une maison ou un local professionnel : je mets le même soin dans chaque projet, quelle que soit sa taille.</p>
+        <p>Je me forme en parallèle au suivi de chantier. Cette double compétence me permet de passer de l'idée au chantier sans perte : je dessine moi-même les plans d'exécution et les maquettes BIM, et je parle le même langage que les entreprises.</p>
+        <blockquote>« Un beau lieu n'est pas forcément un lieu cher. C'est un lieu où chaque choix a une raison. »</blockquote>
+        <p>Basée sur la Côte d'Azur, j'interviens partout en France.</p>
+        <p class="sign">Marine</p>
+      </div>
+    </div>
+  </section>
+  <section class="alt">
+    <div class="wrap">
+      <div class="section-head"><div><p class="eyebrow">Deux casquettes</p><h2>Un projet, un seul interlocuteur</h2></div></div>
+      <div class="duo">
+        <div class="duo-card">
+          <p class="eyebrow">Conception</p>
+          <h3>Architecte d'intérieur</h3>
+          <ul>
+            <li>Analyse de l'existant et programme</li>
+            <li>Plans d'aménagement et circulations</li>
+            <li>Ambiances, matériaux, mobilier, éclairage</li>
+            <li>Rendus 3D photoréalistes</li>
+            <li>Suivi de chantier et réception</li>
+          </ul>
         </div>
-    </footer>
+        <div class="duo-card">
+          <p class="eyebrow">Technique</p>
+          <h3>Dessinatrice-projeteuse BIM</h3>
+          <ul>
+            <li>Maquettes numériques sur Revit et ArchiCAD</li>
+            <li>Plans d'exécution et détails sur AutoCAD</li>
+            <li>Volumétrie et études rapides sur SketchUp</li>
+            <li>Coordination BIM avec les bureaux d'études</li>
+            <li>Accessibilité PMR et normes en vigueur</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="wrap">
+      <div class="commit-head">
+        <div class="photo arch commit-photo">
+          <svg aria-hidden="true"><use href="#branch"/></svg>
+          <span class="ph-label">Matière brute</span>
+        </div>
+        <div class="commit-intro">
+          <p class="eyebrow">Mes engagements concrets</p>
+          <h2>Ce que je fais, projet après projet</h2>
+          <p class="lead">Des choix précis, appliqués sur chaque lieu que je conçois. Pour ceux qui l'occupent, ceux qui le fabriquent et la planète.</p>
+        </div>
+      </div>
+      <div class="commit-grid">
+        <article class="commit">
+          <span class="commit-ico"><svg viewBox="0 0 32 32"><path d="M6 27c5-1 8-5 9-11M15 16c1-6 6-10 12-11-1 7-6 11-12 11zM15 16c-4 0-8-3-9-8 5 0 8 3 9 8z"/></svg></span>
+          <h3>Savoir-faire français</h3>
+          <p>Je fais travailler des artisans et fabricants français, et je mets leur nom en avant auprès de vos clients.</p>
+          <p class="concret"><b>Concrètement</b>Mobilier, menuiseries, textiles et céramiques sourcés en priorité auprès d'ateliers français.</p>
+        </article>
+        <article class="commit">
+          <span class="commit-ico"><svg viewBox="0 0 32 32"><path d="M5 24l7-12 5 7 4-5 6 10z"/><circle cx="22" cy="9" r="2.5"/></svg></span>
+          <h3>Matériaux bruts et nobles</h3>
+          <p>Bois massif, pierre, terre cuite, lin, chaux : des matières laissées au plus près de leur état naturel, qui vieillissent bien.</p>
+          <p class="concret"><b>Concrètement</b>Huiles, cires et enduits à la chaux plutôt que vernis et revêtements plastiques.</p>
+        </article>
+        <article class="commit">
+          <span class="commit-ico"><svg viewBox="0 0 32 32"><circle cx="15" cy="6" r="2.5"/><path d="M15 9v9h7l3 7M15 13h6"/><path d="M11 15a7 7 0 1010 9"/></svg></span>
+          <h3>Accessibilité PMR</h3>
+          <p>Les personnes à mobilité réduite doivent pouvoir entrer, circuler et utiliser le lieu sans aide.</p>
+          <p class="concret"><b>Concrètement</b>Largeurs de passage, salles de bains adaptées, hauteurs pensées pour tous, intégrées dès les premiers plans.</p>
+        </article>
+        <article class="commit">
+          <span class="commit-ico"><svg viewBox="0 0 32 32"><circle cx="9" cy="7" r="2.3"/><path d="M9 10v8M9 13l-3 4M9 18l-2 8M9 18l2 8M12 13l2 13"/><path d="M18 14h8l-1 6h-6zM20 20l-1 4M24 20l1 4"/><circle cx="19" cy="26" r="1.4"/><circle cx="25" cy="26" r="1.4"/></svg></span>
+          <h3>Conception universelle</h3>
+          <p>Un lieu pensé pour tout le monde : personnes âgées, parents avec une poussette, personnes en béquilles ou chargées, enfants.</p>
+          <p class="concret"><b>Concrètement</b>Sols sans ressaut, assises avec accoudoirs, signalétique lisible, éclairage sans éblouissement.</p>
+        </article>
+        <article class="commit">
+          <span class="commit-ico"><svg viewBox="0 0 32 32"><circle cx="16" cy="16" r="11"/><path d="M5.5 13c4 1 6 4 5 8M17 5.5c-1 3 1 5 4 5s4 3 3 6M14 27c1-3 4-4 6-3"/></svg></span>
+          <h3>Santé et planète</h3>
+          <p>Prendre soin de ceux qui vivent et travaillent dans le lieu, et de la planète, à travers chaque matériau choisi.</p>
+          <p class="concret"><b>Concrètement</b>Peintures et colles étiquetées A+, matériaux durables, réemploi quand c'est possible, lumière naturelle maximisée.</p>
+        </article>
+        <article class="commit">
+          <span class="commit-ico"><svg viewBox="0 0 32 32"><path d="M5 9h22v16H5zM5 14h22M10 20h5"/><path d="M9 9l2-4h10l2 4"/></svg></span>
+          <h3>Budget respecté</h3>
+          <p>L'exigence n'oblige pas à dépasser l'enveloppe. Chaque arbitrage vous est expliqué.</p>
+          <p class="concret"><b>Concrètement</b>Un chiffrage clair dès l'avant-projet, mis à jour à chaque étape.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+</div>
 
-    <script src="/assets/script.js"></script>
+<!-- =================== PAGE EXPERTISES =================== -->
+<div data-page="expertises" hidden>
+  <section class="page-hero">
+    <div class="wrap">
+      <p class="eyebrow">Expertises</p>
+      <h1>Ce que je fais pour vous</h1>
+      <p class="lead">De la première esquisse au suivi de chantier, pour les particuliers comme pour les professionnels.</p>
+    </div>
+  </section>
+  <section style="padding-top:0">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Pour qui</p>
+          <h2>Tous les projets, petits ou grands</h2>
+        </div>
+        
+      </div>
+      <div class="erp-grid">
+        <article class="erp">
+          <div class="photo arch"><svg aria-hidden="true"><use href="#branch"/></svg></div>
+          <span class="erp-code">Particuliers</span>
+          <h3>Appartements</h3>
+          <p>Optimiser chaque mètre carré, rénover une pièce ou repenser tout l'espace.</p>
+        </article>
+        <article class="erp">
+          <div class="photo oval"><svg aria-hidden="true"><use href="#branch"/></svg></div>
+          <span class="erp-code">Particuliers</span>
+          <h3>Maisons &amp; villas</h3>
+          <p>Des pièces de vie qui s'ouvrent sur l'extérieur et s'adaptent à chaque membre de la famille.</p>
+        </article>
+        <article class="erp">
+          <div class="photo blob"><svg aria-hidden="true"><use href="#branch"/></svg></div>
+          <span class="erp-code">Professionnels</span>
+          <h3>Commerces &amp; bureaux</h3>
+          <p>Boutiques, cabinets et bureaux qui reflètent votre activité et accueillent bien vos clients.</p>
+        </article>
+        <article class="erp">
+          <div class="photo arch"><svg aria-hidden="true"><use href="#branch"/></svg></div>
+          <span class="erp-code">Professionnels</span>
+          <h3>Restaurants &amp; hôtels</h3>
+          <p>Des lieux d'accueil où l'on se sent attendu dès le seuil, conformes aux normes d'accessibilité.</p>
+        </article>
+      </div>
+      <p class="erp-more">Une pièce à rafraîchir, un appartement entier à rénover ou un local à aménager : chaque projet compte, quelle que soit sa taille.</p>
+    </div>
+  </section>
+  <section class="alt">
+    <div class="wrap">
+      <div class="svc">
+        <span class="tag">Particuliers</span>
+        <div style="display:grid;gap:.8rem"><h3>Appartements, maisons et villas</h3><p>Rénover, réagencer ou simplement redécorer : je conçois des intérieurs qui vous ressemblent et qui facilitent le quotidien de toute la famille.</p></div>
+        <ul><li>Réagencement et optimisation des espaces</li><li>Cuisines et salles de bains</li><li>Rénovation complète ou pièce par pièce</li><li>Adaptation du logement à l'âge ou au handicap</li></ul>
+      </div>
+      <div class="svc">
+        <span class="tag">Professionnels</span>
+        <div style="display:grid;gap:.8rem"><h3>Commerces, bureaux et lieux d'accueil</h3><p>Boutiques, bureaux, cabinets, restaurants ou hôtels : des espaces qui reflètent votre activité et respectent les normes d'accessibilité et de sécurité.</p></div>
+        <ul><li>Boutiques et showrooms</li><li>Bureaux et cabinets</li><li>Restaurants et hôtels</li><li>Mise en accessibilité PMR</li></ul>
+      </div>
+      <div class="svc">
+        <span class="tag">Conception</span>
+        <div style="display:grid;gap:.8rem"><h3>Architecture intérieure</h3><p>Une identité d'espace cohérente avec votre marque, du plan d'aménagement jusqu'au choix de la poignée de porte.</p></div>
+        <ul><li>Relevé et état des lieux</li><li>Esquisses et plans d'aménagement</li><li>Planches d'ambiance et matériaux</li><li>Mobilier sur mesure avec des artisans</li></ul>
+      </div>
+      <div class="svc">
+        <span class="tag">Décoration</span>
+        <div style="display:grid;gap:.8rem"><h3>Décoration intérieure</h3><p>Pour un appartement, une maison ou un local professionnel : redonner du caractère à un lieu sans forcément engager de gros travaux.</p></div>
+        <ul><li>Conseil couleurs et matières</li><li>Choix du mobilier et des luminaires</li><li>Textiles, objets et mise en scène</li><li>Liste d'achats chiffrée</li></ul>
+      </div>
+      <div class="svc">
+        <span class="tag">Extérieurs</span>
+        <div style="display:grid;gap:.8rem"><h3>Terrasses, rooftops et balcons</h3><p>L'extérieur est la suite de l'intérieur. Je le conçois avec le même soin pour qu'il devienne un vrai lieu de vie, et pas seulement une table et des transats.</p></div>
+        <ul><li>Toits-terrasses de particuliers et d'établissements</li><li>Balcons et loggias, même petits</li><li>Jardins, patios et terrasses</li><li>Ombrage, éclairage, végétaux et mobilier d'extérieur</li></ul>
+      </div>
+      <div class="svc">
+        <span class="tag">Suivi de chantier</span>
+        <div style="display:grid;gap:.8rem"><h3>Suivi de projet et de chantier</h3><p>Je consulte les entreprises, compare les devis et coordonne le chantier jusqu'à la réception, en gardant l'œil sur le budget.</p></div>
+        <ul><li>Dossier de consultation (DCE)</li><li>Analyse des offres</li><li>Réunions et comptes rendus de chantier</li><li>Réception et levée des réserves</li></ul>
+      </div>
+      <div class="svc">
+        <span class="tag">Dessin-projet</span>
+        <div style="display:grid;gap:.8rem"><h3>BIM et plans techniques</h3><p>Des maquettes numériques complètes et des plans d'exécution précis, que je peux aussi réaliser pour d'autres agences et architectes.</p></div>
+        <ul><li>Modélisation BIM</li><li>Plans d'exécution et détails</li><li>Rendus 3D photoréalistes</li><li>Mise au propre de plans existants</li></ul>
+      </div>
+    </div>
+  </section>
+  <section class="band outdoor">
+    <div class="wrap">
+      <div class="outdoor-visual">
+        <div class="photo blob big">
+          <img loading="lazy" decoding="async" class="portrait roof-img" src="images/projet-rooftop-mer.webp" alt="Rooftop face à la mer : sol bois, table ovale blanche, parasols et jardinières minérales">
+        </div>
+        <div class="photo oval small">
+          <img loading="lazy" decoding="async" class="portrait terr-img" src="images/projet-terrasse-minerale.webp" alt="Terrasse en bord de mer : grands pots clairs, palmiers et lit de galets blancs">
+        </div>
+      </div>
+      <div class="outdoor-text">
+        <p class="eyebrow">Extérieurs</p>
+        <h2>L'extérieur, la suite de votre intérieur</h2>
+        <p class="lead">Terrasses, rooftops, balcons, jardins : je transforme ces espaces en véritables lieux de vie, à votre image, qui vous font voyager. Un extérieur prolonge le cocon de la maison ou l'accueil d'un établissement. Il mérite la même attention qu'une pièce, bien au-delà d'une table et de deux transats.</p>
+        <ul class="outdoor-list">
+          <li><b>Rooftops</b><span>Toits-terrasses d'appartements, de maisons ou d'établissements, pensés comme une pièce à part entière.</span></li>
+          <li><b>Balcons</b><span>Même quelques mètres carrés peuvent devenir un coin à soi.</span></li>
+          <li><b>Jardins &amp; patios</b><span>Zones de repas, de détente et de passage, reliées à l'intérieur.</span></li>
+          <li><b>Concrètement</b><span>Matériaux qui résistent au soleil et au vent de la côte, ombrage, éclairage du soir, végétaux adaptés au climat.</span></li>
+        </ul>
+        <a class="btn btn--light" href="#contact" style="justify-self:start">Parler de mon extérieur <span class="arrow"></span></a>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="wrap process">
+      <p class="process-label">Ma méthode</p>
+      <ol class="steps">
+        <li class="step"><span class="num">01</span><span class="code">RELEVÉ · ESQ</span><h3>Écouter</h3><p>Visite, relevé de l'existant et compréhension de votre activité, de vos clients et de votre budget.</p></li>
+        <li class="step"><span class="num">02</span><span class="code">APS · APD</span><h3>Concevoir</h3><p>Plans d'aménagement, ambiances, matériaux et premiers rendus 3D, avec une estimation chiffrée.</p></li>
+        <li class="step"><span class="num">03</span><span class="code">PRO · DCE</span><h3>Détailler</h3><p>Plans techniques, maquette BIM, carnets de détails et dossier de consultation des entreprises.</p></li>
+        <li class="step"><span class="num">04</span><span class="code">ACT</span><h3>Sélectionner</h3><p>Consultation des artisans, analyse des devis et choix des entreprises avec vous.</p></li>
+        <li class="step"><span class="num">05</span><span class="code">DET · AOR</span><h3>Réaliser</h3><p>Suivi de chantier, coordination des corps de métier et réception des travaux.</p></li>
+      </ol>
+      <div class="process-card">
+        <svg viewBox="0 0 24 24"><path d="M12 2v20M2 12h20M5 5l14 14M19 5L5 19" stroke-width=".8"/></svg>
+        Un seul interlocuteur, de la première visite à la remise des clés.
+      </div>
+    </div>
+  </section>
+  <section class="band">
+    <div class="wrap">
+      <div class="section-head"><div><p class="eyebrow">Logiciels maîtrisés</p><h2>Mes outils au quotidien</h2></div></div>
+      <div class="soft-grid">
+        <div class="soft"><b>Revit</b><span>Maquette BIM, nomenclatures, plans coordonnés</span></div>
+        <div class="soft"><b>ArchiCAD</b><span>Modélisation BIM et documentation</span></div>
+        <div class="soft"><b>AutoCAD</b><span>Plans 2D, détails d'exécution</span></div>
+        <div class="soft"><b>SketchUp</b><span>Volumes, études d'aménagement, 3D</span></div>
+      </div>
+    </div>
+  </section>
+</div>
+
+
+<!-- =================== PAGE RÉALISATIONS =================== -->
+<div data-page="realisations" hidden>
+  <section class="page-hero">
+    <div class="wrap">
+      <p class="eyebrow">Projets</p>
+      <h1>Lieux transformés</h1>
+      <p class="lead">Projets d'études, travaux personnels et premières réalisations.</p>
+    </div>
+  </section>
+  <section style="padding-top:0">
+    <div class="wrap">
+      <div class="filters" role="group" aria-label="Filtrer les projets">
+        <button type="button" data-filter="tous" aria-pressed="true">Tous</button>
+        <button type="button" data-filter="part" aria-pressed="false">Particuliers</button>
+        <button type="button" data-filter="pro" aria-pressed="false">Professionnels</button>
+        <button type="button" data-filter="ext" aria-pressed="false">Extérieurs</button>
+      </div>
+      <div class="work-grid" id="works">
+        <article class="work" data-cat="ext"><div class="photo"><img loading="lazy" decoding="async" class="portrait roof-img" src="images/projet-rooftop-mer.webp" alt="Rooftop face à la mer"></div><h3>Rooftop face à la mer</h3><p>Extérieur · Aménagement</p></article>
+        <article class="work" data-cat="ext"><div class="photo"><img loading="lazy" decoding="async" class="portrait terr-img" src="images/projet-terrasse-minerale.webp" alt="Terrasse minérale avec grands pots et galets blancs"></div><h3>Terrasse minérale</h3><p>Extérieur · Végétalisation</p></article>
+        <article class="work" data-cat="part"><div class="photo"><svg aria-hidden="true"><use href="#branch"/></svg></div><h3>Appartement</h3><p>Particulier · Rénovation</p></article>
+        <article class="work" data-cat="part"><div class="photo"><svg aria-hidden="true"><use href="#branch"/></svg></div><h3>Villa</h3><p>Particulier · Décoration</p></article>
+        <article class="work" data-cat="pro"><div class="photo"><svg aria-hidden="true"><use href="#branch"/></svg></div><h3>Boutique</h3><p>Professionnel · Concept</p></article>
+        
+        <article class="work" data-cat="pro"><div class="photo"><svg aria-hidden="true"><use href="#branch"/></svg></div><h3>Restaurant</h3><p>Professionnel · Rendus 3D</p></article>
+        <article class="work" data-cat="part"><div class="photo"><svg aria-hidden="true"><use href="#branch"/></svg></div><h3>Salle de bains</h3><p>Particulier · Plans</p></article>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- =================== PAGE CONTACT =================== -->
+<div data-page="contact" hidden>
+  <section class="page-hero">
+    <div class="wrap">
+      <p class="eyebrow">Contact</p>
+      <h1>Parlons de votre lieu</h1>
+      <p class="lead">Un appel, un message ou le formulaire : je vous réponds sous 48 heures ouvrées.</p>
+    </div>
+  </section>
+  <section style="padding-top:0">
+    <div class="wrap contact-grid">
+      <div class="coords">
+        <div class="coord coord--main">
+          <svg viewBox="0 0 24 24"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 006 6L16 13l5 2v4a2 2 0 01-2 2A16 16 0 013 5a2 2 0 012-2"/></svg>
+          <div><small>Téléphone</small><span class="val" id="tel">06 62 52 21 20</span></div>
+          <button class="copy" type="button" data-copy="tel">Copier</button>
+        </div>
+        <div class="coord">
+          <svg viewBox="0 0 24 24"><path d="M3 6h18v12H3zM3 6l9 7 9-7"/></svg>
+          <div><small>E-mail</small><span class="val" id="mail">dartois.architecture@outlook.com</span></div>
+          <button class="copy" type="button" data-copy="mail">Copier</button>
+        </div>
+        <div class="coord">
+          <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/></svg>
+          <div><small>Instagram</small><a class="val" href="https://www.instagram.com/" target="_blank" rel="noopener" style="text-decoration:none">@dartois.architecture</a></div>
+          <span></span>
+        </div>
+        <div class="coord">
+          <svg viewBox="0 0 24 24"><path d="M12 21s-7-6.5-7-12a7 7 0 0114 0c0 5.5-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>
+          <div><small>Zone d'intervention</small><span class="val">Cannes, Côte d'Azur et toute la France</span></div>
+          <span></span>
+        </div>
+        <p class="hours">Du lundi au vendredi, 9 h – 18 h. Premier échange gratuit et sans engagement.</p>
+      </div>
+
+      <form class="form" id="form" novalidate>
+        <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <h2>Votre projet en quelques mots</h2>
+        <div class="row">
+          <div class="field"><label for="f-nom">Nom et prénom</label><input id="f-nom" name="nom" required autocomplete="name"></div>
+          <div class="field"><label for="f-societe">Établissement</label><input id="f-societe" name="societe" autocomplete="organization"></div>
+        </div>
+        <div class="row">
+          <div class="field"><label for="f-email">E-mail</label><input id="f-email" name="email" type="email" required autocomplete="email"></div>
+          <div class="field"><label for="f-tel">Téléphone</label><input id="f-tel" name="tel" type="tel" autocomplete="tel"></div>
+        </div>
+        <div class="row">
+          <div class="field"><label for="f-type">Type de lieu</label>
+            <select id="f-type" name="type">
+              <option>Appartement</option><option>Maison / villa</option><option>Extérieur (terrasse, rooftop, balcon)</option><option>Commerce / bureaux</option><option>Restaurant / hôtel</option><option>Autre</option>
+            </select></div>
+          <div class="field"><label for="f-surface">Surface approximative (m²)</label><input id="f-surface" name="surface" inputmode="numeric"></div>
+        </div>
+        <div class="field"><label for="f-budget">Budget envisagé</label>
+          <select id="f-budget" name="budget">
+            <option>À définir ensemble</option><option>Moins de 5 000 €</option><option>5 000 – 20 000 €</option><option>20 000 – 50 000 €</option><option>50 000 – 150 000 €</option><option>Plus de 150 000 €</option>
+          </select></div>
+        <div class="field"><label for="f-msg">Votre message</label><textarea id="f-msg" name="message" required></textarea></div>
+        <label class="check"><input type="checkbox" id="f-rgpd" required> J'accepte que mes données soient utilisées pour être recontactée au sujet de mon projet.</label>
+        <div id="formMsg" class="form-msg" hidden></div>
+        <button class="btn btn--accent" type="submit" style="justify-self:start">Envoyer ma demande <span class="arrow"></span></button>
+      </form>
+    </div>
+  </section>
+</div>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <b>Dartois Architecture</b>
+        <p>Architecture intérieure, décoration et suivi de chantier, pour les particuliers et les professionnels.</p>
+      </div>
+      <div><h4>Pages</h4><ul><li><a href="#accueil">Accueil</a></li><li><a href="#apropos">À propos</a></li><li><a href="#expertises">Expertises</a></li><li><a href="#realisations">Projets</a></li><li><a href="#contact">Contact</a></li></ul></div>
+      <div><h4>Contact</h4><ul><li>06 62 52 21 20</li><li>dartois.architecture@outlook.com</li><li>Cannes · Côte d'Azur</li></ul></div>
+      <div><h4>Suivre</h4><ul><li><a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a></li><li><a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a></li><li><a href="https://www.pinterest.fr/" target="_blank" rel="noopener">Pinterest</a></li></ul></div>
+    </div>
+    <div class="foot-bottom"><span>© 2026 Dartois Architecture · Marine Dartois, micro-entreprise</span><span>Mentions légales · Politique de confidentialité</span></div>
+  </div>
+</footer>
+
 </body>
-
 </html>
